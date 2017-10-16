@@ -80,7 +80,7 @@ Route::group(['prefix'=>'student'], function () {
 
 //修改根路由'/'，使之可執行HomeController的indexc函數
 Route::get('/','HomeController@index');
-*/
+
 Route::group(['prefix'=>'student'], function () {
     Route::get('{student_no}',[
         'as'=>'student',
@@ -91,3 +91,6 @@ Route::group(['prefix'=>'student'], function () {
         'uses' =>'StudentController@getStudentData '
     ])->where(['subject'=>'(chinese | english | math)']);
 });
+*/
+//新增路由'cool'
+Route::get('cool','cool\TestController@index');
