@@ -77,6 +77,17 @@ Route::group(['prefix'=>'student'], function () {
     }
     ])->where(['subject'=>'(chinese | english | math)']);
 });
-*/
+
 //修改根路由'/'，使之可執行HomeController的indexc函數
 Route::get('/','HomeController@index');
+*/
+Route::group(['prefix'=>'student'], function () {
+    Route::get('{student_no}',[
+        'as'=>'student',
+        'uses'=> 'StudentController@getStudentData '
+    ]);
+    Route::get('student/{student_no}/score/{subject?}',[
+        'as'=>'student.score',
+        'uses' =>'StudentController@getStudentData '
+    ])->where(['subject'=>'(chinese | english | math)']);
+});
