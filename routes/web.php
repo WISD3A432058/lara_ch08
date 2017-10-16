@@ -91,6 +91,11 @@ Route::group(['prefix'=>'student'], function () {
         'uses' =>'StudentController@getStudentData '
     ])->where(['subject'=>'(chinese | english | math)']);
 });
-*/
+
 //新增路由'cool'
 Route::get('cool','cool\TestController@index');
+*/
+//修改路由'cool'，使之加入namespace路由'Cool'當中
+Route::group(['namespace'=>'Cool'],function (){
+    Route::get('cool','cool\TestController@index');
+});
