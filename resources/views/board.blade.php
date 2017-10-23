@@ -10,10 +10,10 @@
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
-		<a class="navbar-brand" href="/">HelloLaravel</a>
+		<a class="navbar-brand" href=<?php echo url('/');?>>HelloLaravel</a>
 		<ul class="nav navbar-nav">
 			<li>
-				<a href="#">排行榜</a>
+				<a href="<?php echo action('BoardController@getIndex');?> ">排行榜</a>
 			</li>
 		</ul>
 	</div>
@@ -47,7 +47,7 @@
 				<td>60</td>
 				<td>180</td>
 				<td>
-					<a class="btn btn-default btn-sm" href="#">查看學生資料</a>
+					<a class="btn btn-default btn-sm" href="{{route('student_no')}}">查看學生資料</a>
 				</td>
 			</tr>
 			</tbody>
