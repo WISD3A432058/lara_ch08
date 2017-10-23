@@ -4,6 +4,7 @@
         <ul class="nav navbar-nav">
             <li>
                 <a href="{{ action('BoardController@getIndex') }}">排行榜</a>
+
             </li>
         </ul>
     </div>
