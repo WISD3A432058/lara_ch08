@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public function getStudemtData($student_no){
+    public function getStudentData($student_no){
         return "學號:" .$student_no;
     }
 
