@@ -99,3 +99,6 @@ Route::get('cool','cool\TestController@index');
 Route::group(['namespace'=>'Cool'],function (){
     Route::get('cool','TestController@index');
 });
+
+//修改根路由'/'，使之可執行BoardController的getIndex函數
+Route::get('/board','BoardController@getIndex');
