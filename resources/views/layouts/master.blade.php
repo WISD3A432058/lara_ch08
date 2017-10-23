@@ -1,7 +1,17 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2017/10/23
- * Time: 下午 07:12
- */
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        @yield('title')
+    </title>
+    @section('head')
+        @include('partials.head')
+    @show
+</head>
+<body>
+@include('partials.nav')
+<div class="container">
+    @yield('content')
+</div>
+</body>
+</html>
