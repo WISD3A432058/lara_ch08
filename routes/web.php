@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+
 //顯示學生的資料與成績
 Route::get('student/{student_no}', function ($student_no) {
     return "學號:".$student_no;
@@ -94,8 +94,8 @@ Route::group(['prefix'=>'student'], function () {
 
 //新增路由'cool'
 Route::get('cool','cool\TestController@index');
-*/
+
 //修改路由'cool'，使之加入namespace路由'Cool'當中
 Route::group(['namespace'=>'Cool'],function (){
-    Route::get('cool','cool\TestController@index');
+    Route::get('cool','TestController@index');
 });
