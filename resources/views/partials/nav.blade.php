@@ -1,7 +1,11 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: admin
- * Date: 2017/10/23
- * Time: 下午 07:04
- */
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="{{ asset('HomeController@index) }}">HelloLaravel</a>
+        <ul class="nav navbar-nav">
+            <li>
+                <a href="{{ asset('BoardController@getIndex) }}">排行榜</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div style="padding-top:70px;"></div>
