@@ -16,21 +16,21 @@
 		<p>
 			電話：0912345678
 		</p>
-		@if ( is_null($subject) || $subject=='chinese' )
+		@if(is_null($subject)||$subject=='chinese')
 			<p>
 				國文：60
 			</p>
 		@endif
-		@if ( is_null($subject) || $subject=='english )
+		@if(is_null($subject)||$subject=='english')
 			<p>
 				英文：60
 			</p>
 		@endif
-		@if ( is_null($subject) || $subject=='math )
+		@if(is_null($subject)||$subject=='math')
 			<p>
 				數學：60
 			</p>
 		@endif
 	</div>
-	</div>
+
 @stop
