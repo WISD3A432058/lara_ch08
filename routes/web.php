@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 //顯示學生的資料與成績
 Route::get('student/{student_no}', function ($student_no) {
     return "學號:".$student_no;
@@ -65,8 +65,7 @@ Route::group(['prefix'=>'student'], function () {
         })->where(['subject'=>'(chinese | english | math)']);
     });
 
-//路由命名
-Route::pattern('student_no','s [0-9] {10}');
+
 Route::group(['prefix'=>'student'], function () {
     Route::get('{student_no}',['as'=>'student','users'=> function ($student_no) {
         return "學號:" . $student_no;
@@ -77,23 +76,28 @@ Route::group(['prefix'=>'student'], function () {
     }
     ])->where(['subject'=>'(chinese | english | math)']);
 });
+*/
+
+//路由命名
+Route::pattern('student_no','s[0-9]{10}');
 
 //修改根路由'/'，使之可執行HomeController的indexc函數
 Route::get('/','HomeController@index');
 
-Route::group(['prefix'=>'student'], function () {
+Route::group(['prefix'=>'student'],function(){
     Route::get('{student_no}',[
         'as'=>'student',
-        'uses'=> 'StudentController@getStudentData '
+        'uses'=>'StudentController@getStudentData'
     ]);
-    Route::get('student/{student_no}/score/{subject?}',[
+    Route::get('{student_no}/score/{subject?}',[
         'as'=>'student.score',
-        'uses' =>'StudentController@getStudentData '
-    ])->where(['subject'=>'(chinese | english | math)']);
+        'uses'=>'StudentController@getStudentScore'
+    ])->where(['subject'=>'(chinese|english|math)']);
 });
 
+
 //新增路由'cool'
-Route::get('cool','cool\TestController@index');
+Route::get('cool','Cool\TestController@index');
 
 //修改路由'cool'，使之加入namespace路由'Cool'當中
 Route::group(['namespace'=>'Cool'],function (){
@@ -101,4 +105,4 @@ Route::group(['namespace'=>'Cool'],function (){
 });
 
 //修改根路由'/'，使之可執行BoardController的getIndex函數
-Route::get('/board','BoardController@getIndex');
+Route::get('/board','BoardController@Index');
