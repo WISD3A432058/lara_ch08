@@ -105,4 +105,4 @@ Route::group(['namespace'=>'Cool'],function (){
 });
 
 //修改根路由'/'，使之可執行BoardController的getIndex函數
-Route::get('/board','BoardController@Index');
+Route::get('/board','BoardController@getIndex');
