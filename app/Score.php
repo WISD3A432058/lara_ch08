@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use \App\Student as StudentEloquent;
+
 class Score extends Model
 {
     //設定 model 對應到的資料表
